@@ -1,0 +1,36 @@
+GET http://localhost:3000/images
+
+###
+
+GET http://localhost:3000/images/671e4a6c5866690a071b025e
+
+
+###
+POST http://localhost:3000/images
+Content-Type: application/json
+
+{
+  "imageUrl": "testing"
+}
+
+###
+DELETE http://localhost:3000/images/671ebe903c43803c0a7d8208
+
+
+
+###
+# POST http://localhost:3000/images
+# Content-Type: application/json
+
+# {
+#   "imageUrl": "https://ik.imagekit.io/apabila/2392389"
+# }
+
+
+###
+POST http://localhost:3000/images/upload
+Content-Type: application/json
+
+{
+    "filePath": "/home/aydin/Pictures/man.png"
+}
