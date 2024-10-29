@@ -2,7 +2,7 @@ GET http://localhost:3000/images
 
 ###
 
-GET http://localhost:3000/images/671e4a6c5866690a071b025e
+GET http://localhost:3000/images/6720c3add5befc4dba364d4c
 
 
 ###
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/images/671ebe903c43803c0a7d8208
+DELETE http://localhost:3000/images/6720c3add5befc4dba364d4c
 
 
 
@@ -32,5 +32,5 @@ POST http://localhost:3000/images/upload
 Content-Type: application/json
 
 {
-    "filePath": "/home/aydin/Pictures/man.png"
+    "filePath": "/home/aydin/Pictures/Screenshot_2024-09-29_15_48_06.png"
 }
