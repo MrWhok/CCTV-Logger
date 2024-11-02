@@ -20,17 +20,12 @@ router.get('/', async (req, res) => {
 
 //GET one image
 router.get('/:id', getImage,(req, res) => {
-    res.send(res.image.imageUrl);
-    // res.send(req.params.id);
+    res.status(200).json({message:"Image found successfully",imageData:res.image});
 });
 
 //Upload url directly to database
 router.post('/', async (req, res) => {
     const image= new Image({
-        // datetime: req.body.datetime,
-        // location: req.body.location,
-        // weather: req.body.weather,
-        // temperature: req.body.temperature,
         imageUrl: req.body.imageUrl
     })
     try {
