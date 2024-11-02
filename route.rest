@@ -1,11 +1,12 @@
+###GET ALL IMAGES
 GET http://localhost:3000/images
 
-###
 
+###GET an IMAGE BY ID
 GET http://localhost:3000/images/6720c3add5befc4dba364d4c
 
 
-###
+###UPLOAD URL DIRECTLY
 POST http://localhost:3000/images
 Content-Type: application/json
 
@@ -13,24 +14,34 @@ Content-Type: application/json
   "imageUrl": "testing"
 }
 
-###
+###DELETE IMAGE BY ID
 DELETE http://localhost:3000/images/6720c3add5befc4dba364d4c
 
-
-
-###
-# POST http://localhost:3000/images
-# Content-Type: application/json
-
-# {
-#   "imageUrl": "https://ik.imagekit.io/apabila/2392389"
-# }
-
-
-###
+###UPLOAD IMAGE INTO IMAGEKIT AND SAVE THE URL INTO DATABASE
 POST http://localhost:3000/images/upload
 Content-Type: application/json
 
 {
-    "filePath": "/home/aydin/Pictures/Screenshot_2024-09-29_15_48_06.png"
+    "filePath": "/home/aydin/Pictures/Screenshot_2024-10-26_16_23_46.png"
+}
+
+
+### Register User
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{ 
+    "firstName": "awalan",
+    "lastName": "akhiran",
+    "email": "test@example.com",
+    "password": "admin123"
+}
+
+### LOGIN USER
+POST http://localhost:3000/auth
+Content-Type: application/json
+
+{ 
+    "email": "test@example.com",
+    "password": "admin123"
 }
