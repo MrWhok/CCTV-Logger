@@ -15,14 +15,14 @@ Content-Type: application/json
 }
 
 ###DELETE IMAGE BY ID
-DELETE http://localhost:3000/images/6720c3add5befc4dba364d4c
+DELETE http://localhost:3000/images/6721176ca2d8305feeb6ac57
 
 ###UPLOAD IMAGE INTO IMAGEKIT AND SAVE THE URL INTO DATABASE
 POST http://localhost:3000/images/upload
 Content-Type: application/json
 
 {
-    "filePath": "/home/aydin/Pictures/Screenshot_2024-10-26_16_23_46.png"
+    "filePath": "/home/mbsaloka/Downloads/chall.jpg"
 }
 
 
@@ -30,10 +30,10 @@ Content-Type: application/json
 POST http://localhost:3000/users/register
 Content-Type: application/json
 
-{ 
-    "firstName": "awalan",
-    "lastName": "akhiran",
-    "email": "test2@example.com",
+{
+    "firstName": "dummy-first",
+    "lastName": "dummy-last",
+    "email": "dummy@gmail.com",
     "password": "admin123"
 }
 
@@ -41,11 +41,20 @@ Content-Type: application/json
 POST http://localhost:3000/users/login
 Content-Type: application/json
 
-{ 
-    "email": "test3@example.com",
+{
+    "email": "dummy@gmail.com",
     "password": "admin123"
 }
 
 
 ### GET ALL USER USER
 GET http://localhost:3000/users/all
+
+
+### CHANGE STARRED STATUS
+PATCH http://localhost:3000/images/67298d09d0f7d716abef5292/star
+Content-Type: application/json
+
+{
+    "starred": true
+}

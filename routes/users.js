@@ -16,10 +16,10 @@ router.get('/all', async (req, res) => {
 router.post('/register',async(req,res)=>{
     try{
         const {error}=validate(req.body);
-        if(error) 
+        if(error)
             return res.status(400).send(error.details[0].message);
         const user=await User.findOne({email:req.body.email});
-        if(user) 
+        if(user)
             return res.status(409).send("User with this email already exists");
 
         const salt= await bcrypt.genSalt(Number(process.env.SALT));
@@ -35,12 +35,12 @@ router.post('/register',async(req,res)=>{
 router.post('/login',async(req,res)=>{
     try{
         const {error}=validateLogin(req.body);
-        if(error) 
+        if(error)
             return res.status(400).send(error.details[0].message);
 
 
         const user=await User.findOne({email:req.body.email});
-        if(!user) 
+        if(!user)
             return res.status(400).send("Invalid email");
 
         const validpassword=await bcrypt.compare(
@@ -65,4 +65,4 @@ const validateLogin=(data)=>{
     return schema.validate(data);
 }
 
-module.exports=router;  
+module.exports=router;

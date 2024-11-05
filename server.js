@@ -6,6 +6,8 @@ const app = express();
 const mongoose = require('mongoose');
 const imagesRouter = require('./routes/images');
 const userRoutes=require('./routes/users');
+const cors = require('cors');
+app.use(cors());
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 const db = mongoose.connection;

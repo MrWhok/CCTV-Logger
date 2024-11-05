@@ -101,3 +101,24 @@ async function getImage(req, res, next) {
     res.image = image;
     next();
 }
+
+// PATCH update starred status
+router.patch('/:id/star', async (req, res) => {
+    const { starred } = req.body;
+    if (typeof starred !== 'boolean') {
+        return res.status(400).json({ message: "Invalid starred value. It must be a boolean." });
+    }
+
+    try {
+        const image = await Image.findById(req.params.id);
+        if (!image) {
+            return res.status(404).json({ message: 'Cannot find image' });
+        }
+
+        image.starred = starred;
+        const updatedImage = await image.save();
+        res.status(200).json({ message: "Starred status updated successfully", updatedImage });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
