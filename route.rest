@@ -3,7 +3,7 @@ GET http://localhost:3000/images
 
 
 ###GET an IMAGE BY ID
-GET http://localhost:3000/images/672403ad5af7601804a7da51
+GET http://localhost:3000/images/6744541cc0ebd9473685385f
 
 
 ###UPLOAD URL DIRECTLY
@@ -15,14 +15,14 @@ Content-Type: application/json
 }
 
 ###DELETE IMAGE BY ID
-DELETE http://localhost:3000/images/6721176ca2d8305feeb6ac57
+DELETE http://localhost:3000/images/672403ad5af7601804a7da51
 
-###UPLOAD IMAGE INTO IMAGEKIT AND SAVE THE URL INTO DATABASE
+###UPLOAD IMAGE INTO LOCAL AND SAVE THE URL INTO DATABASE
 POST http://localhost:3000/images/upload
 Content-Type: application/json
 
 {
-    "filePath": "/home/mbsaloka/Downloads/chall.jpg"
+    "filePath": "/home/aydin/Pictures/no9WU.png"
 }
 
 
@@ -42,7 +42,7 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "email": "dummy@gmail.com",
+    "email": "test@example.com",
     "password": "admin123"
 }
 
@@ -52,7 +52,7 @@ GET http://localhost:3000/users/all
 
 
 ### CHANGE STARRED STATUS
-PATCH http://localhost:3000/images/67298d09d0f7d716abef5292/star
+PATCH http://localhost:3000/images/6725d3e96c43c0dc10e711f7/star
 Content-Type: application/json
 
 {
