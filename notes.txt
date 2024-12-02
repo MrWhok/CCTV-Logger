@@ -1,0 +1,8 @@
+-Belum di set relationship antara user dengan image
+-Delete masih belum bener
+
+    try {
+      fs.unlinkSync(path.join(__dirname, '../../public', res.image.imageUrl));  
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
