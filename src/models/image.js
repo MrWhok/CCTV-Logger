@@ -5,6 +5,10 @@ const imageSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
+    totalEntity:{
+      type: Number,
+      default: 0,
+    },
     date:{
       type: Date,
       default: Date.now,

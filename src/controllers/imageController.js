@@ -37,7 +37,8 @@ const uploadImage = async (req, res) => {
       }
   
       const image = new Image({
-        imageUrl: `/staticimages/${fileName}`
+        imageUrl: `/staticimages/${fileName}`,
+        totalEntity: req.body.totalEntity,
       });
   
       try {
