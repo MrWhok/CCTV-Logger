@@ -12,7 +12,7 @@ const {
 
 router.get('/', authenticate, getAllImages);
 router.get('/:id', authenticate,findImage, getImage);
-router.post('/upload', authenticate, uploadImage);
+router.post('/upload', uploadImage);
 router.delete('/delete/:id', authenticate,findImage, deleteImage);
 router.patch('/favorite/:id', authenticate,findImage, favoriteImage);
 
