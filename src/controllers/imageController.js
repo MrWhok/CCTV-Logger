@@ -3,7 +3,6 @@ const config = require("../config/config");
 const Image = require("../models/image");
 const fs = require('fs');
 const path = require('path');
-const multer = require('multer');
 
 const getAllImages= async (req, res) => {
   try {
@@ -28,7 +27,7 @@ const uploadImage = async (req, res) => {
   }
 
   const fileName = req.file.filename;
-  const fileUrl = `http://localhost:3000/staticimages/${fileName}`;
+  const fileUrl = `/staticimages/${fileName}`;
 
   const image = new Image({
     imageUrl: fileUrl,
