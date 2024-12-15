@@ -15,4 +15,9 @@ app.use('/staticimages', express.static(path.join(__dirname, '../public/staticim
 app.use('/images', imageRoutes);
 app.use('/users', userRoutes);
 
+
+app.get('/', (req, res) => {
+    res.send('Welcome to CCTV Logger!');
+  });
+  
 module.exports = app;
