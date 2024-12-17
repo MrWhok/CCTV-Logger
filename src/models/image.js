@@ -11,7 +11,7 @@ const imageSchema = new mongoose.Schema({
     },
     date:{
       type: Date,
-      default: Date.now,
+      default: () => new Date(Date.now() + 7 * 60 * 60 * 1000),
     },
     time:{
       type: String,
